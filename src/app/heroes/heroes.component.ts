@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+  // heroプロパティを追加する
+  hero = "Windstorm";
 
   constructor() { }
 
@@ -13,3 +15,6 @@ export class HeroesComponent implements OnInit {
   }
 
 }
+
+
+
