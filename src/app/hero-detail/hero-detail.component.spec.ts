@@ -12,7 +12,7 @@ describe('HeroDetailComponent', () => {
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeroDetailComponent);
+    fixture   = TestBed.createComponent(HeroDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
