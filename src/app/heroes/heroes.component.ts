@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -8,15 +9,14 @@ import { Hero } from '../hero';
 })
 export class HeroesComponent implements OnInit {
   // heroプロパティを追加する
-  hero: Hero = {
-    id:     1,
-    name:  '黒瀬有紀'
-  };
-  
-  constructor() { }
+  hero: Hero = { id: 1,name: '黒瀬有紀'};
 
-  ngOnInit(): void {
-  }
+  // heroesコンポーネントプロパティを定義し、HEROES配列を表示
+  heroes = HEROES;
+  
+  // constructor() { }
+
+  ngOnInit(): void {}
 
 }
 
