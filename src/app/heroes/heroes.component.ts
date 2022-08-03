@@ -15,6 +15,7 @@ export class HeroesComponent implements OnInit {
   heroes = HEROES;
 
   // クリックイベントにより、メソッドを設定する
+  // selectedHeroは省略可能プロパティである
   selectedHero?: Hero;
   onSelect(hero: Hero): void{
     this.selectedHero = hero;

@@ -3,7 +3,8 @@
 <ul class="heroes">
   <!-- heroesは配列定数HEROESが代入されている -->
   <li *ngFor="let hero of heroes">
-    <button type="button" (click)="onSelect(hero)">
+    <!-- heroとselectedHeroが同じ場合、selectedclassが適用される -->
+    <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
       <span class="badge">{{ hero.id }}</span>
       <span class="name">{{ hero.name }}</span>
     </button>
