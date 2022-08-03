@@ -13,6 +13,12 @@ export class HeroesComponent implements OnInit {
 
   // heroesコンポーネントプロパティを定義し、HEROES配列を表示
   heroes = HEROES;
+
+  // クリックイベントにより、メソッドを設定する
+  selectedHero?: Hero;
+  onSelect(hero: Hero): void{
+    this.selectedHero = hero;
+  }
   
   // constructor() { }
 
