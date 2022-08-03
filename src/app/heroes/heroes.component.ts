@@ -9,7 +9,7 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
   // heroプロパティを追加する
-  hero: Hero = { id: 1,name: '黒瀬有紀'};
+  hero: Hero = { id: 1, name: '黒瀬有紀' };
 
   // heroesコンポーネントプロパティを定義し、HEROES配列を表示
   heroes = HEROES;
