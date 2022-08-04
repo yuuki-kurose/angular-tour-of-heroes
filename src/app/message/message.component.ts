@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } 　　from '../message.service';
 
 @Component({
-  selector: 'app-message',
+  selector:    'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  styleUrls:   ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-
-  constructor() { }
+  
+  //テンプレートから参照される為、publicクラスである必要がある
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
   }
