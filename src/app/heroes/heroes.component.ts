@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero }              from '../hero';
-import { HEROES }            from '../mock-heroes';
-
+import { HeroService }       from '../hero.service';
 @Component({
   selector: 　　'app-heroes',
   templateUrl: './heroes.component.html',
@@ -12,7 +11,7 @@ export class HeroesComponent implements OnInit {
   hero: Hero = { id: 1, name: '黒瀬有紀' };
 
   // heroesコンポーネントプロパティを定義し、HEROES配列を表示
-  heroes = HEROES;
+  heroes: Hero[] = [];
 
   // クリックイベントにより、メソッドを設定する
   // selectedHeroは省略可能プロパティである
@@ -20,10 +19,17 @@ export class HeroesComponent implements OnInit {
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
   }
-  
-  // constructor() { }
+  // HeroesComponentが生成される際、privateなheroServiceプロパティを定義
+  constructor(private heroService: HeroService) { }
 
-  ngOnInit(): void {}
+  // サービスを介してヒーローデータを取得するためのメソッド
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
+
+  ngOnInit(): void {
+    this.getHeroes();
+  }
 
 }
 
