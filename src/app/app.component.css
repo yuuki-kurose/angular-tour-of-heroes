@@ -3,6 +3,7 @@ h1 {
   color:     #369;
   font-family: Arial, Helvetica, sans-serif;
   font-size:   250%;
+  
 }
 h2, h3 {
   color:     #444;
@@ -21,7 +22,7 @@ button {
   border:            none;
   border-radius:     4px;
   cursor:            pointer;
-  color:           black;
+  color:          black;
   font-size:         1.2rem;
   padding:           1rem;
   margin-right:      1rem;
@@ -42,3 +43,4 @@ button:disabled {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
