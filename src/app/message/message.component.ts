@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } 　　from '../message.service';
 
 @Component({
   selector:    'app-message',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls:   ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-
-  constructor() { }
+  
+  //テンプレートから参照される為、publicクラスである必要がある
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
   }
