@@ -10,6 +10,12 @@ import { MessageService } from './message.service';
 export class HeroService {
 
   constructor(private messageService: MessageService) { }
+
+  getHero(id: number): Observable<Hero> {
+    const hero = HEROES.find(h => h.id === id)!;
+    this.messageService.add('HeroService: fetched hero id=${id}');
+    return of(hero);
+  }
   
   // of関数を使用し、サーバーからのデータの取得→addコマンドにより送信
   getHeroes(): Observable<Hero[]> {
