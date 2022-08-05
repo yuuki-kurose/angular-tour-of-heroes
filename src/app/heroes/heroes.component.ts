@@ -6,15 +6,11 @@ import { MessageService }    from '../message.service';
 
 
 @Component({
-  selector: 　　'app-heroes',
+  selector:    'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: 　['./heroes.component.css']
+  styleUrls:  ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  
-  // クリックイベントにより、メソッドを設定する
-  // selectedHeroは省略可能プロパティである
-  selectedHero?: Hero;
 
   // heroesコンポーネントプロパティを定義し、HEROES配列を表示
   heroes: Hero[] = [];
@@ -26,17 +22,11 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void{
-    this.selectedHero = hero;
-    this.messageService.add('HeroesComponent: Selected hero id=${hero.id}');
-  }
-
   // サービスを介してヒーローデータを取得するためのメソッド
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
-
 }
 
 
