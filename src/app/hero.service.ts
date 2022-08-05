@@ -8,6 +8,8 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class HeroService {
+
+  constructor(private messageService: MessageService) { }
   
   // of関数を使用し、サーバーからのデータの取得→addコマンドにより送信
   getHeroes(): Observable<Hero[]> {
@@ -17,5 +19,5 @@ export class HeroService {
   }
 
   
-  constructor(private messageService: MessageService) { }
+  
 }
