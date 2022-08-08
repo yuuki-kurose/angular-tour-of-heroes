@@ -34,8 +34,6 @@ import { NgxsEmitPluginModule }           from '@ngxs-labs/emitter';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    NgxsModule.forRoot(),
-    NgxsEmitPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
