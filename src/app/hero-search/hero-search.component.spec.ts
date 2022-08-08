@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroSearchComponent } from './hero-search.component';
+import { HeroSearchComponent }       from './hero-search.component';
 
 describe('HeroSearchComponent', () => {
   let component: HeroSearchComponent;
@@ -12,7 +12,7 @@ describe('HeroSearchComponent', () => {
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeroSearchComponent);
+    fixture   = TestBed.createComponent(HeroSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,27 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { Observable } from 'rxjs';
+import { ActivatedRoute }           from '@angular/router';
+import { Location }                 from '@angular/common';
+import { Observable }               from 'rxjs';
 
-import { Store, Select } from '@ngxs/store';
-import { HeroAction } from '../hero.actions';
-import { HeroState } from '../hero.state';
+import { Store, Select }            from '@ngxs/store';
+import { HeroAction }               from '../hero.action';
+import { HeroState }                from '../hero.status';
 
-import { Hero } from '../hero';
+import { Hero }                     from '../hero';
 
 @Component({
-  selector: 'app-hero-detail',
+  selector:    'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.css' ]
+  styleUrls:   [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
   /** ngxs Selector **/
-  @Select(HeroState.selectedHero) hero$: Observable<Hero>
+  @Select(HeroState.selectedHero) hero$?: Observable<Hero>
 
   constructor(
-    private route: ActivatedRoute,
+    private route:    ActivatedRoute,
     private location: Location,
-    private store: Store
+    private store:    Store
   ) {}
 
   ngOnInit(): void {
