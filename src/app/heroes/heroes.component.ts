@@ -6,7 +6,7 @@ import { HeroAction }          from '../hero.action';
 import { HeroState }           from '../hero.status'; 
 
 import { Hero }                from '../hero';
-import { HEROES }              from '../mock-heroes';
+
 
 
 @Component({
@@ -30,6 +30,7 @@ export class HeroesComponent implements OnInit {
     this.store.dispatch(new HeroAction.Load())
   }
 
+  // actionのdispatchは、実行するactionを指示すること
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }

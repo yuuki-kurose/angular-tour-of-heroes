@@ -16,7 +16,6 @@ export class HeroStateModel {
 @State<HeroStateModel>({
   name: 'heroes',
   defaults: {
-    selectedHero?: ,
     heroes: []
   }
 })
