@@ -16,7 +16,7 @@ export class HeroStateModel {
 @State<HeroStateModel>({
   name: 'heroes',
   defaults: {
-    selectedHero:,
+    selectedHero?: ,
     heroes: []
   }
 })
@@ -27,7 +27,7 @@ export class HeroState {
     private heroService: HeroService
   ) { }
 
-  //////// Selector //////////
+  
   /** ヒーロー一覧 **/
   @Selector()
   static heroes(state: HeroStateModel) {
@@ -40,7 +40,7 @@ export class HeroState {
     return state.selectedHero;
   }
 
-  //////// Load methods //////////
+  
   /** サーバーからヒーローを取得する */
   @Action(HeroAction.Load)
   load(ctx: StateContext<HeroStateModel>) {
@@ -68,7 +68,6 @@ export class HeroState {
       )
   }
 
-  //////// Save methods //////////
 
   /** POST: サーバーに新しいヒーローを登録する */
   @Action(HeroAction.Add)

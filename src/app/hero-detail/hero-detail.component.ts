@@ -29,7 +29,8 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    // 非nullアサーション演算子をつけてみる
+    const id = +!this.route.snapshot.paramMap.get('id');
 
     this.store.dispatch(new HeroAction.Select(id));
   }
