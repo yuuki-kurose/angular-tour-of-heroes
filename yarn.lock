@@ -1362,6 +1362,13 @@
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-14.1.1.tgz#a44846f337dd5077649b0b6e561707925db580a0"
   integrity sha512-pj8sN6jBIi2otTHE/CNQyy09Pmn8tGsZyFrSiNO147yjLnrOSJTeFuXfE2pYgrmcYgj0ybnK1zstt4bAKaL7/Q==
 
+"@ngxs-labs/emitter@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ngxs-labs/emitter/-/emitter-4.0.0.tgz#bf7ea374d0b12543199f1a6a23bc3e72e9244c67"
+  integrity sha512-NHNNpcioVNwXE35s7oeC12hpSzD//grLrhF5g4Vq7sxlcdEqtVsNZoi8eaWBPlAMeB2MHJdNNGVrj6zOMvx8MQ==
+  dependencies:
+    tslib "^2.3.0"
+
 "@ngxs/store@^3.7.4":
   version "3.7.4"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.7.4.tgz#dae9e6c101a7688970558fb140ac5ef55706a200"

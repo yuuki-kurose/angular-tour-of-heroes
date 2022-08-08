@@ -1,22 +1,27 @@
-import { Component, OnInit }  from '@angular/core';
-import { ActivatedRoute }     from '@angular/router';
-import { Location }           from '@angular/common';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute }           from '@angular/router';
+import { Location }                 from '@angular/common';
+import { Observable }               from 'rxjs';
 
-import { Hero }               from '../hero';
-import { HeroService }        from '../hero.service';
+import { Store, Select }            from '@ngxs/store';
+import { HeroAction }               from '../hero.action';
+import { HeroState }                from '../hero.status';
+
+import { Hero }                     from '../hero';
 
 @Component({
-  selector:     'app-hero-detail',
-  templateUrl:  './hero-detail.component.html',
-  styleUrls:    [ './hero-detail.component.css' ]
+  selector:    'app-hero-detail',
+  templateUrl: './hero-detail.component.html',
+  styleUrls:   [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero | undefined;
+  /** ngxs Selector **/
+  @Select(HeroState.selectedHero) hero$?: Observable<Hero>
 
   constructor(
-    private route:       ActivatedRoute,
-    private heroService: HeroService,
-    private location:    Location
+    private route:    ActivatedRoute,
+    private location: Location,
+    private store:    Store
   ) {}
 
   ngOnInit(): void {
@@ -24,19 +29,18 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    // 非nullアサーション演算子をつけてみる
+    const id = +!this.route.snapshot.paramMap.get('id');
+
+    this.store.dispatch(new HeroAction.Select(id));
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  save(): void {
-    if (this.hero) {
-      this.heroService.updateHero(this.hero)
-        .subscribe(() => this.goBack());
-    }
+  save(hero: Hero): void {
+    this.store.dispatch(new HeroAction.Update(hero))
+      .subscribe(() => this.goBack());
   }
 }
