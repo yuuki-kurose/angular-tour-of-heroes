@@ -2,7 +2,8 @@ import { NgModule }                       from '@angular/core';
 import { BrowserModule }                  from '@angular/platform-browser';
 
 import { NgxsModule }                     from '@ngxs/store';
-// import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsEmitPluginModule }           from '@ngxs-labs/emitter';
+// import { NgxsLoggerPluginModule }         from '@ngxs/logger-plugin';
 import { HeroState }                      from './hero.status';
 
 import { FormsModule }                    from '@angular/forms';
@@ -29,12 +30,8 @@ import { MessagesComponent }              from './message/message.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-
-    // コメントアウトしておく
-    // NgxsModule.forRoot([
-      // HeroState
-    // ]),
-    // NgxsLoggerPluginModule.forRoot(),
+    NgxsModule.forRoot(),
+    NgxsEmitPluginModule.forRoot(),
   ],
   declarations: [
     AppComponent,
