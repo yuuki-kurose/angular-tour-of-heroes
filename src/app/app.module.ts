@@ -1,7 +1,7 @@
 import { NgModule }                       from '@angular/core';
 import { BrowserModule }                  from '@angular/platform-browser';
 
-import { NgxsModule }                     from '@ngxs/store';
+import { NgxsModule, State }              from '@ngxs/store';
 import { NgxsEmitPluginModule }           from '@ngxs-labs/emitter';
 // import { NgxsLoggerPluginModule }         from '@ngxs/logger-plugin';
 import { HeroState }                      from './hero.status';
@@ -20,6 +20,7 @@ import { HeroDetailComponent }            from './hero-detail/hero-detail.compon
 import { HeroesComponent }                from './heroes/heroes.component';
 import { HeroSearchComponent }            from './hero-search/hero-search.component';
 import { MessagesComponent }              from './message/message.component';
+// import { state }                          from '@angular/animations';
 
 @NgModule({
   imports: [
@@ -31,8 +32,8 @@ import { MessagesComponent }              from './message/message.component';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     NgxsModule.forRoot(),
-    NgxsEmitPluginModule.forRoot(),
-  ],
+    NgxsEmitPluginModule.forRoot()
+  ], 
   declarations: [
     AppComponent,
     DashboardComponent,
