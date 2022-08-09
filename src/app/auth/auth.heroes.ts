@@ -1,0 +1,18 @@
+/*
+今回は非同期処理ではなく、仮のmock-heroes.tsのようなデータを作成、取得できるように実装してみる
+*/
+// インターフェースコンポーネントをインポート
+import { Hero } from '../hero';
+
+// mock-heroesをそのままコピペしており,定数名のみ変更しています。
+export const ALLHEROES: Hero[] = [
+  { id: 12, name: 'Dr. Nice' },
+  { id: 13, name: 'Bombasto' },
+  { id: 14, name: 'Celeritas' },
+  { id: 15, name: 'Magneta' },
+  { id: 16, name: 'RubberMan' },
+  { id: 17, name: 'Dynama' },
+  { id: 18, name: 'Dr. IQ' },
+  { id: 19, name: 'Magma' },
+  { id: 20, name: 'Tornado' }
+];
