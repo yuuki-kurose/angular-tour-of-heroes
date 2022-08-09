@@ -51,7 +51,7 @@ export class HeroService {
     );
   }
 
-  //////// Save methods //////////
+  
 
   /** POST: サーバーに新しいヒーローを登録する */
   addHero (hero: Hero): Observable<Hero> {
