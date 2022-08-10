@@ -19,7 +19,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private messageService: MessageService
-  ) {} 
+  ) {}
 
   // 頻繁に使用する為、log()でラップする
   private log(message: string) {
@@ -30,3 +30,4 @@ export class AuthService {
   
   
 }
+
