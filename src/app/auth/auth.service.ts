@@ -13,12 +13,13 @@ import { HeroAction }               from '../hero.action';
 import { AuthState }                from './auth.state';
 
 
+
 export class AuthService {
   // コンストラクタにて注入
   constructor(
     private http: HttpClient,
     private messageService: MessageService
-  ) {}
+  ) {} 
 
   // 頻繁に使用する為、log()でラップする
   private log(message: string) {
