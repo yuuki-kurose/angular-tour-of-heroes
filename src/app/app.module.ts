@@ -20,6 +20,7 @@ import { HeroDetailComponent }            from './hero-detail/hero-detail.compon
 import { HeroesComponent }                from './heroes/heroes.component';
 import { HeroSearchComponent }            from './hero-search/hero-search.component';
 import { MessagesComponent }              from './message/message.component';
+import { AuthState } from './auth/auth.state';
 // import { state }                          from '@angular/animations';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MessagesComponent }              from './message/message.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    NgxsModule.forRoot(),
+    // Storeで管理するStateを配列として渡し、forRoot()で初期化する
+    NgxsModule.forRoot([AuthState]),
     NgxsEmitPluginModule.forRoot()
   ], 
   declarations: [
