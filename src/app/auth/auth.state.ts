@@ -1,9 +1,7 @@
 import { Injectable }                                  from '@angular/core';
 import { Emittable, Emitter, EmitterAction, Receiver } from '@ngxs-labs/emitter';
 import { Selector, State, StateContext }               from '@ngxs/store';
-// import { ALLHEROES }                                   from './auth.heroes';
 
-// import { AuthAction } from './auth.actions';
 
 export interface AuthStateModel {
   isAuthenticated: boolean;
