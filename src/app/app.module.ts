@@ -20,7 +20,7 @@ import { HeroDetailComponent }            from './hero-detail/hero-detail.compon
 import { HeroesComponent }                from './heroes/heroes.component';
 import { HeroSearchComponent }            from './hero-search/hero-search.component';
 import { MessagesComponent }              from './message/message.component';
-import { AuthState } from './auth/auth.state';
+import { AuthState }                      from './auth/auth.state';
 // import { state }                          from '@angular/animations';
 
 @NgModule({
