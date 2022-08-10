@@ -10,7 +10,7 @@ export interface AuthStateModel {
 }
 
 @State<AuthStateModel>({
-  name: 'auth',
+  name: 'heroes',
   defaults: {
     isAuthenticated: false
   }
