@@ -1,8 +1,9 @@
 import { NgModule }                       from '@angular/core';
 import { BrowserModule }                  from '@angular/platform-browser';
 
-import { NgxsModule }                     from '@ngxs/store';
-// import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsModule, State }              from '@ngxs/store';
+import { NgxsEmitPluginModule }           from '@ngxs-labs/emitter';
+// import { NgxsLoggerPluginModule }         from '@ngxs/logger-plugin';
 import { HeroState }                      from './hero.status';
 
 import { FormsModule }                    from '@angular/forms';
@@ -19,6 +20,8 @@ import { HeroDetailComponent }            from './hero-detail/hero-detail.compon
 import { HeroesComponent }                from './heroes/heroes.component';
 import { HeroSearchComponent }            from './hero-search/hero-search.component';
 import { MessagesComponent }              from './message/message.component';
+import { AuthState }                      from './auth/auth.state';
+// import { state }                          from '@angular/animations';
 
 @NgModule({
   imports: [
@@ -29,13 +32,10 @@ import { MessagesComponent }              from './message/message.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-
-    // コメントアウトしておく
-    // NgxsModule.forRoot([
-      // HeroState
-    // ]),
-    // NgxsLoggerPluginModule.forRoot(),
-  ],
+    // Storeで管理するStateを配列として渡し、forRoot()で初期化する
+    NgxsModule.forRoot([AuthState]),
+    NgxsEmitPluginModule.forRoot()
+  ], 
   declarations: [
     AppComponent,
     DashboardComponent,
