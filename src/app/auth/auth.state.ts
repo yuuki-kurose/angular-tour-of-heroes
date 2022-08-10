@@ -22,7 +22,8 @@ export class AuthState {
   @Receiver()
   static setAuthenticated(
     ctx:    StateContext<AuthStateModel>,
-    action: EmitterAction<void>
+    // アクションをコメントアウトしても大丈夫か確認
+    // action: EmitterAction<void>
   ) {
     ctx.setState({
       isAuthenticated: true
@@ -32,7 +33,7 @@ export class AuthState {
   @Receiver()
   static setUnauthenticated(
     ctx:    StateContext<AuthStateModel>,
-    action: EmitterAction<void>
+    // action: EmitterAction<void>
   ) {
     ctx.setState({
       isAuthenticated: false
